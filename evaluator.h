@@ -8,7 +8,7 @@ using namespace std;
 constexpr int A_MAX = 5;
 constexpr int S_MAX = 100;
 constexpr int D_MAX = 4000;
-constexpr int S_STEP = 8;
+constexpr int S_STEP = 4;
 constexpr int D_STEP = 160;
 
 constexpr int A_DIM = A_MAX + 1;
@@ -64,5 +64,7 @@ void save_dp(const string &filename, const DP<T> &dp);
 
 template<typename T>
 void load_dp(const string& filename, DP<T> &dp);
+
+void write_table(const string &filename);
 
 #endif // EVALUATOR_H

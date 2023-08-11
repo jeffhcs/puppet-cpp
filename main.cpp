@@ -121,36 +121,38 @@ int main() {
     populate();
     cout << "Saving..." << endl;
     save_dp("evals.bin", evals);
-    cout << "Loading..." << endl;
-    load_dp("evals.bin", evals);
-    cout << endl;
+//    cout << "Loading..." << endl;
+//    load_dp("evals.bin", evals);
+//    cout << endl;
 
-    vector<State> k_frames = {
-            State{5, 5, 4, 4, 8, 8},
-            State{4, 5, 9, 0, 41, 41},
-            State{4, 5, 20, 11, 200, 101},
-            State{3, 5, 24, 4, 288, 110},
-            State{2, 5, 31, 0, 493, 166},
-            State{2, 5, 40, 9, 800, 203},
-            State{2, 4, 34, 11, 888, 229},
-            State{2, 3, 24, 13, 934, 253},
-            State{2, 2, 15, 17, 984, 310},
-            State{1, 2, 23, 10, 1127, 355},
-            State{1, 2, 32, 19, 1390, 493},
-            State{0, 2, 39, 6, 1617, 513},
-            State{0, 2, 51, 18, 2152, 662},
-            State{0, 2, 63, 30, 2831, 955},
-            State{0, 1, 35, 34, 2990, 1084},
-            State{0, 0, 1, 39, 3163, 1253},
-            State{0, 0, 12, 50, 3239, 1763},
-            State{0, 0, 24, 62, 3460, 2440},
-            State{0, 0, 36, 74, 3825, 3260},
-    };
+    write_table("table.bin");
 
-    for (const auto& frame : k_frames) {
-        State state(frame);
-        peak(state);
-    }
+//    vector<State> k_frames = {
+//            State{5, 5, 4, 4, 8, 8},
+//            State{4, 5, 9, 0, 41, 41},
+//            State{4, 5, 20, 11, 200, 101},
+//            State{3, 5, 24, 4, 288, 110},
+//            State{2, 5, 31, 0, 493, 166},
+//            State{2, 5, 40, 9, 800, 203},
+//            State{2, 4, 34, 11, 888, 229},
+//            State{2, 3, 24, 13, 934, 253},
+//            State{2, 2, 15, 17, 984, 310},
+//            State{1, 2, 23, 10, 1127, 355},
+//            State{1, 2, 32, 19, 1390, 493},
+//            State{0, 2, 39, 6, 1617, 513},
+//            State{0, 2, 51, 18, 2152, 662},
+//            State{0, 2, 63, 30, 2831, 955},
+//            State{0, 1, 35, 34, 2990, 1084},
+//            State{0, 0, 1, 39, 3163, 1253},
+//            State{0, 0, 12, 50, 3239, 1763},
+//            State{0, 0, 24, 62, 3460, 2440},
+//            State{0, 0, 36, 74, 3825, 3260},
+//    };
+//
+//    for (const auto& frame : k_frames) {
+//        State state(frame);
+//        peak(state);
+//    }
 
     return 0;
 

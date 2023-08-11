@@ -248,3 +248,23 @@ template void load_dp<float>(const string&, DP<float>&);
 template void load_dp<int>(const string&, DP<int>&);
 
 
+void write_table(const string &filename) {
+    ofstream out(filename, ios::binary);
+
+    if (!out) {
+        cerr << "Cannot open " << filename << " for writing." << endl;
+        return;
+    }
+
+    for (int i = 0; i < TOTAL_BUCKETS; ++i) {
+        display_progress_bar(i, TOTAL_BUCKETS);
+        int move = read_dp(unbucket_state(get_ith_bucket(i)), moves);
+        int value = 0;
+        if (move == 1 || move == 4) {
+            value = 1;
+        }
+        out.write(reinterpret_cast<const char *>(&value), sizeof(int));
+    }
+
+    out.close();
+}
